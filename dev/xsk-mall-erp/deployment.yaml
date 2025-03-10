@@ -1,0 +1,68 @@
+---
+# Source: ops-repo/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xsk-mall-erp
+  labels:
+    app: xsk-mall-erp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xsk-mall-erp
+  template:
+    metadata:
+      annotations:
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
+      labels:
+        app: xsk-mall-erp
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - xsk-mall-erp
+              topologyKey: kubernetes.io/hostname
+            weight: 100
+      containers:
+        - name: xsk-mall-erp
+          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall-erp:5-202503101529-26-b7ac077"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+          volumeMounts:
+            - mountPath: /etc/localtime
+              name: host-time
+      volumes:
+        - hostPath:
+            path: /etc/localtime
+          name: host-time
