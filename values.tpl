@@ -13,14 +13,14 @@ image:
 
 podAnnotations:
   prometheus.io/scrape: "true"
-  prometheus.io/port: "8080"
+  prometheus.io/port: "${PORT}"
 
 podLabels:
   app: ${AppName}
 
 service:
   type: ClusterIP
-  port: 8080
+  port: ${PORT}
 
 ingress:
   enabled: false
