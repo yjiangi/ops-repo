@@ -5,7 +5,7 @@ replicaCount: 1
 
 image:
   repository: registry.cn-hangzhou.aliyuncs.com/gitops-demo/demo-prometheus
-  tag: 10-202503100638-57-6db6225
+  tag: 11-202503100649-16-54235f6
   pullPolicy: IfNotPresent
 
 #imagePullSecrets:
