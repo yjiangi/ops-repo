@@ -33,7 +33,7 @@ spec:
             weight: 100
       containers:
         - name: demo-prometheus
-          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/demo-prometheus:11-202503100649-16-54235f6"
+          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/demo-prometheus:13--5d6cd76"
           imagePullPolicy: IfNotPresent
           env:
             - name: POD_NAME
