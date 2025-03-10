@@ -33,7 +33,7 @@ spec:
             weight: 100
       containers:
         - name: xsk-mall
-          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall:6-202503101643-12-287ddff"
+          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall:7-202503101705-22-287ddff"
           imagePullPolicy: IfNotPresent
           env:
             - name: POD_NAME
@@ -44,14 +44,6 @@ spec:
             - name: http
               containerPort: 8012
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           resources:
             limits:
               cpu: 100m
