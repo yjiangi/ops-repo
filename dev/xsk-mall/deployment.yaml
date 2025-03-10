@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       annotations:
-        prometheus.io/port: "8080"
+        prometheus.io/port: "8012"
         prometheus.io/scrape: "true"
       labels:
         app: xsk-mall
@@ -33,7 +33,7 @@ spec:
             weight: 100
       containers:
         - name: xsk-mall
-          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall:5-202503101530-05-a95724b"
+          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall:6-202503101643-12-287ddff"
           imagePullPolicy: IfNotPresent
           env:
             - name: POD_NAME
@@ -42,7 +42,7 @@ spec:
                   fieldPath: metadata.name
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 8012
               protocol: TCP
           livenessProbe:
             httpGet:

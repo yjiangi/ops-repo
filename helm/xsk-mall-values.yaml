@@ -5,7 +5,7 @@ replicaCount: 1
 
 image:
   repository: registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall
-  tag: 5-202503101530-05-a95724b
+  tag: 6-202503101643-12-287ddff
   pullPolicy: IfNotPresent
 
 #imagePullSecrets:
@@ -13,14 +13,14 @@ image:
 
 podAnnotations:
   prometheus.io/scrape: "true"
-  prometheus.io/port: "8080"
+  prometheus.io/port: "8012"
 
 podLabels:
   app: xsk-mall
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 8012
 
 ingress:
   enabled: false

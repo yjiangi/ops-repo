@@ -8,8 +8,8 @@ metadata:
     app: xsk-mall
 spec:
   ports:
-    - port: 8080
-      targetPort: 8080
+    - port: 8012
+      targetPort: 8012
       protocol: TCP
       name: http
   type: NodePort
