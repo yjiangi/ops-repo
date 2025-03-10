@@ -5,7 +5,7 @@ replicaCount: 1
 
 image:
   repository: registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall
-  tag: 4-202503101522-00-69d12a9
+  tag: 5-202503101530-05-a95724b
   pullPolicy: IfNotPresent
 
 #imagePullSecrets:

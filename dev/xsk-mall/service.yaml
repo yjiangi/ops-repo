@@ -1,0 +1,17 @@
+---
+# Source: ops-repo/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: xsk-mall
+  labels:
+    app: xsk-mall
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  type: NodePort
+  selector:
+    app: xsk-mall
