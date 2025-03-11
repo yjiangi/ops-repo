@@ -5,7 +5,7 @@ replicaCount: 1
 
 image:
   repository: registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall-erp
-  tag: 6-202503101715-56-d4932a4
+  tag: 7-202503111113-51-c014063
   pullPolicy: IfNotPresent
 
 #imagePullSecrets:
