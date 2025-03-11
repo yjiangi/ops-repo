@@ -33,7 +33,7 @@ spec:
             weight: 100
       containers:
         - name: xsk-mall-erp
-          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall-erp:7-202503111113-51-c014063"
+          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall-erp:1-202503111948-07-c014063"
           imagePullPolicy: IfNotPresent
           env:
             - name: POD_NAME
@@ -46,8 +46,8 @@ spec:
               protocol: TCP
           resources:
             limits:
-              cpu: 100m
-              memory: 2048Mi
+              cpu: 2000m
+              memory: 3072Mi
             requests:
               cpu: 100m
               memory: 128Mi
