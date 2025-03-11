@@ -33,7 +33,7 @@ spec:
             weight: 100
       containers:
         - name: xsk-mall-erp
-          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall-erp:1-202503111948-07-c014063"
+          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/xsk-mall-erp:2-202503112038-21-c014063"
           imagePullPolicy: IfNotPresent
           env:
             - name: POD_NAME
