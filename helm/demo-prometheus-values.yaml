@@ -5,7 +5,7 @@ replicaCount: 1
 
 image:
   repository: registry.cn-hangzhou.aliyuncs.com/gitops-demo/demo-prometheus
-  tag: 13--5d6cd76
+  tag: 20-202503121532-20-fbe9d0c
   pullPolicy: IfNotPresent
 
 #imagePullSecrets:
@@ -13,14 +13,14 @@ image:
 
 podAnnotations:
   prometheus.io/scrape: "true"
-  prometheus.io/port: "8080"
+  prometheus.io/port: ""
 
 podLabels:
   app: demo-prometheus
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 
 
 ingress:
   enabled: false
@@ -40,8 +40,8 @@ ingress:
 
 resources:
   limits:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 2000m
+    memory: 3072Mi
   requests:
     cpu: 100m
     memory: 128Mi

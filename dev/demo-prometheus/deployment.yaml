@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       annotations:
-        prometheus.io/port: "8080"
+        prometheus.io/port: ""
         prometheus.io/scrape: "true"
       labels:
         app: demo-prometheus
@@ -33,7 +33,7 @@ spec:
             weight: 100
       containers:
         - name: demo-prometheus
-          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/demo-prometheus:13--5d6cd76"
+          image: "registry.cn-hangzhou.aliyuncs.com/gitops-demo/demo-prometheus:20-202503121532-20-fbe9d0c"
           imagePullPolicy: IfNotPresent
           env:
             - name: POD_NAME
@@ -42,20 +42,12 @@ spec:
                   fieldPath: metadata.name
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
           resources:
             limits:
-              cpu: 100m
-              memory: 128Mi
+              cpu: 2000m
+              memory: 3072Mi
             requests:
               cpu: 100m
               memory: 128Mi
