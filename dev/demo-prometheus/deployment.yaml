@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       annotations:
-        prometheus.io/port: ""
+        prometheus.io/port: "8080"
         prometheus.io/scrape: "true"
       labels:
         app: demo-prometheus
@@ -42,7 +42,7 @@ spec:
                   fieldPath: metadata.name
           ports:
             - name: http
-              containerPort: 
+              containerPort: 8080
               protocol: TCP
           resources:
             limits:
