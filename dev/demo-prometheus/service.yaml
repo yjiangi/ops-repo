@@ -9,7 +9,7 @@ metadata:
 spec:
   ports:
     - port: 
-      targetPort: 
+      targetPort: 8080
       protocol: TCP
       name: http
   type: NodePort
